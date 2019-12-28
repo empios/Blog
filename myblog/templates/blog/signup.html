@@ -1,0 +1,8 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{{% block content %}
+<form method="POST" class="form-group">
+{% csrf_token %}
+{% crispy form %}
+<button type="submit" class="btn btn-success"?>Join us!</button>
+{% endblock %}

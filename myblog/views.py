@@ -4,6 +4,8 @@ from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.shortcuts import redirect
+from .forms import RegisterForm
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
@@ -41,3 +43,13 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+def signup(response):
+    if response.method == "POST":
+        form = RegisterForm(response.POST)
+        if form.is_valid():
+            form.save()
+        return redirect("/blog")
+    else:
+        form = RegisterForm()
+    return render(response, "blog/signup.html", {"form":form})
