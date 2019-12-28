@@ -4,7 +4,6 @@
 <form method="POST" class="form-group">
 {% csrf_token %}
 {{form|crispy}}
-<p>Masz juz konto? Zaloguj sie <a href="/login">tutaj</a></p>
-<button type="submit" class="btn btn-success">Dolacz do nas</button>
+<button type="submit" class="btn btn-success">Zaloguj sie</button>
 </form>
 {% endblock %}

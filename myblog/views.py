@@ -49,7 +49,7 @@ def signup(response):
         form = RegisterForm(response.POST)
         if form.is_valid():
             form.save()
-        return redirect("/blog")
+        return redirect("/login")
     else:
         form = RegisterForm()
-    return render(response, "blog/signup.html", {"form":form})
+    return render(response, "blog/signup.html", {'form':form})
