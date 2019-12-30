@@ -3,19 +3,36 @@
     <head>
   
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+<script src="https://kit.fontawesome.com/8026f2d489.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 
         <title>Pawel's blog</title>
     </head>
     <body>
-        <div class="page-header">
+    <div class="wrapper">
         {% if user.is_authenticated %}
     <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         {% endif %}
-            <h1><a href="/blog">Pawel's blog</a></h1>
+            <h1>My personal blog</h1>
+            <p>Feel free to contact with me</p>
+            <div class="media">
+                <ul>
+                    <li><i class="fab fa-twitter" aria-hidden="true"></i></li>
+                    <li><i class="fab fa-twitch" aria-hidden="true"></i></li>
+                    <li><i class="fab fa-github" aria-hidden="true"></i></li>
+                    <li><i class="fab fa-instagram" aria-hidden="true"></i></li>
+                    <li><i class="fab fa-facebook" aria-hidden="true"></i></li>
+                </ul>
+            </div>
         </div>
             {% block content %}
             {% endblock %}
     </body>
+    <div class="footer">
+    <footer>
+<p>Posted by: Paweł Włodarczyk</p>
+    </footer>
+</div>
 </html>
